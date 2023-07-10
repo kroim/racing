@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <p *ngIf="username!=''">Welcome {{ username }}, <span (click)="logout()" class="logout text-primary">logout</span></p>
+    </div>
+  </div>
+  <button id="addMemberButton" class="btn btn-primary pull-right" (click)="goToAddMemberForm()">Add Member</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Member ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Job Title</th>
+        <th>Racing Team</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let member of members'>
+        <td>{{member?.id}}</td>
+        <td>{{member?.firstName}}</td>
+        <td>{{member?.lastName}}</td>
+        <td>{{member?.jobTitle}}</td>
+        <td>{{member?.team}}</td>
+        <td>{{member?.status}}</td>
+        <td>
+          <i class="fa fa-edit" (click)="goToEditMember(member.id)"></i>
+          <i class="fa fa-trash" (click)="goToDeleteMember(member.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
