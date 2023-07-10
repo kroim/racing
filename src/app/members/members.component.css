@@ -1,0 +1,18 @@
+#addMemberButton {
+  margin-bottom: 10px;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.fa-edit, .fa-trash{
+  padding: 0 5%;
+  cursor: pointer;
+}
+.fa-edit:hover {
+  color: greenyellow;
+}
+.fa-trash:hover {
+  color: red;
+}
